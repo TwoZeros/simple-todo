@@ -6,11 +6,10 @@
         <groupId>ru.twozeros</groupId>
         <artifactId>simple-todo</artifactId>
         <version>1.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ru.twozeros.todo</groupId>
     <artifactId>views</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <name>views</name>
     <description>views</description>
     <properties>
@@ -21,7 +20,7 @@
         <dependency>
             <groupId>ru.twozeros.todo</groupId>
             <artifactId>service</artifactId>
-            <version>1.0</version>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>
