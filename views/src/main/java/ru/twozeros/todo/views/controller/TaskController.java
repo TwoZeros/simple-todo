@@ -33,7 +33,6 @@ class TaskController {
 
     @GetMapping("{id}")
     Task one(@PathVariable Long id) {
-
         return service.one(id);
     }
 
