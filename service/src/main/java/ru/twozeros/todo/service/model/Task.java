@@ -13,6 +13,5 @@ public class Task {
     private Long id;
     private String name;
     private Date created;
-
-
+    private Boolean isComplete;
 }

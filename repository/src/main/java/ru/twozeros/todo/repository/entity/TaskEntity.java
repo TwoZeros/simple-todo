@@ -20,6 +20,16 @@ public class TaskEntity {
 
     private Date created;
 
+    private Boolean isComplete;
+
+    public Boolean getComplete() {
+        return isComplete;
+    }
+
+    public void setComplete(Boolean complete) {
+        isComplete = complete;
+    }
+
     public Long getId() {
         return id;
     }
