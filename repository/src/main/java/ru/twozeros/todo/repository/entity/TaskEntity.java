@@ -18,6 +18,16 @@ public class TaskEntity {
     @Column(name = "task_name")
     private String name;
 
+    public String getLongDescription() {
+        return longDescription;
+    }
+
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
+    }
+
+    private String longDescription;
+
     private Date created;
 
     public Long getId() {
