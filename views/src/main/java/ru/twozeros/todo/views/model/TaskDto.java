@@ -12,4 +12,5 @@ public class TaskDto {
     private Long id;
     private String name;
     private String longDescription;
+    private Boolean isComplete;
 }

@@ -28,7 +28,18 @@ public class TaskEntity {
 
     private String longDescription;
 
+    public Boolean getComplete() {
+        return isComplete;
+    }
+
+    public void setComplete(Boolean complete) {
+        isComplete = complete;
+    }
+
+    private Boolean isComplete;
+
     private Date created;
+
 
     public Long getId() {
         return id;
