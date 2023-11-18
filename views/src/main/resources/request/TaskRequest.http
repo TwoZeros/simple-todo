@@ -1,10 +1,16 @@
 GET localhost:8080/api/v1/task/list
 
+### get by id
+GET localhost:8080/api/v1/task/8
+
 ### create task
 POST localhost:8080/api/v1/task/
 Content-Type: application/json
 
-{ "name": "do anything" }
+{
+  "name": "do anything 2",
+  "isCompleted": true
+}
 
 
 ###UPDATE task
@@ -12,13 +18,14 @@ POST localhost:8080/api/v1/task/
 Content-Type: application/json
 
 {
-  "name": "do anything" }
+  "name": "do anything"
+}
 
 
 ### DELETE REQUEST
 
 
-DELETE localhost:8080/api/v1/task/2
+DELETE localhost:8080/api/v1/task/4
 
 
 ###

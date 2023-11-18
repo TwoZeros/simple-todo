@@ -7,4 +7,5 @@ import ru.twozeros.todo.repository.entity.TaskEntity;
 
 @Repository
 public interface TaskRepository extends CrudRepository<TaskEntity, Long> {
+
 }

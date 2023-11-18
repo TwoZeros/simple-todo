@@ -8,6 +8,6 @@ import java.util.Date;
 public class TaskMapper {
 
     public static Task toService(TaskDto task) {
-        return new Task(task.getId(),task.getName(), new Date());
+        return new Task(task.getId(),task.getName(), new Date(), task.getIsCompleted());
     }
 }

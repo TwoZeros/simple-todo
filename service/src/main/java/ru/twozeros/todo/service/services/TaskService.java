@@ -41,8 +41,6 @@ public class TaskService {
             return TaskMapper.toResponse(task);
     }
 
-
-
     public void deleteTask(@PathVariable Long id) {
         repository.deleteById(id);
     }
