@@ -10,6 +10,6 @@ public class TaskMapper {
     }
 
     public static Task toResponse(TaskEntity task) {
-        return new Task(task.getId(), task.getName(), task.getCreated(), task.getComplete());
+        return new Task(task.getId(), task.getName(), task.getCreated(), task.getIsComplete());
     }
 }

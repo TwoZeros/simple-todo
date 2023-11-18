@@ -14,7 +14,7 @@ Content-Type: application/json
 
 
 ###UPDATE task
-POST localhost:8080/api/v1/task/
+PUT localhost:8080/api/v1/task/
 Content-Type: application/json
 
 {

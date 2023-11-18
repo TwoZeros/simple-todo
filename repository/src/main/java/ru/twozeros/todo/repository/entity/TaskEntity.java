@@ -22,14 +22,6 @@ public class TaskEntity {
 
     private Boolean isComplete;
 
-    public Boolean getComplete() {
-        return isComplete;
-    }
-
-    public void setComplete(Boolean complete) {
-        isComplete = complete;
-    }
-
     public Long getId() {
         return id;
     }
@@ -53,4 +45,13 @@ public class TaskEntity {
     public void setCreated(Date created) {
         this.created = created;
     }
+
+    public Boolean getIsComplete() {
+        return isComplete;
+    }
+
+    public void setIsComplete(Boolean complete) {
+        isComplete = complete;
+    }
+
 }
