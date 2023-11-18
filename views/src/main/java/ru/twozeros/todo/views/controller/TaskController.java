@@ -1,9 +1,11 @@
 package ru.twozeros.todo.views.controller;
 
 import org.springframework.web.bind.annotation.*;
+import ru.twozeros.todo.service.exception.TaskArgumentException;
 import ru.twozeros.todo.service.model.Task;
 import ru.twozeros.todo.service.services.TaskService;
 import ru.twozeros.todo.views.mapper.TaskMapper;
+import ru.twozeros.todo.views.model.NewTaskDto;
 import ru.twozeros.todo.views.model.TaskDto;
 
 import java.util.List;
@@ -25,7 +27,17 @@ class TaskController {
     }
 
     @PostMapping()
-    Task newTask(@RequestBody TaskDto taskDto) {
+    Task newTask(@RequestBody NewTaskDto taskDto) {
+        var task = TaskMapper.toService(taskDto);
+        return service.add(task);
+    }
+
+    @PutMapping()
+    Task updateTask(@RequestBody TaskDto taskDto) {
+
+        if(taskDto.getId() == null) {
+            throw new TaskArgumentException();
+        }
         var task = TaskMapper.toService(taskDto);
         return service.add(task);
     }
