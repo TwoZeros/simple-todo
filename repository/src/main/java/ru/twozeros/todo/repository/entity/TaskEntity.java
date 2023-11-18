@@ -18,6 +18,10 @@ public class TaskEntity {
     @Column(name = "task_name")
     private String name;
 
+    private String longDescription;
+
+    private Boolean isCompleted;
+
     private Date created;
 
     public Long getId() {
@@ -42,5 +46,21 @@ public class TaskEntity {
 
     public void setCreated(Date created) {
         this.created = created;
+    }
+
+    public String getLongDescription() {
+        return longDescription;
+    }
+
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
     }
 }

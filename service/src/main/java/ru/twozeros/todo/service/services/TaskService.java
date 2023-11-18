@@ -34,7 +34,6 @@ public class TaskService {
         return TaskMapper.toResponse(createdTask);
     }
 
-
     public Task one(@PathVariable Long id) {
         var task = repository.findById(id)
                 .orElseThrow(() -> new TaskNotFoundException(id));
