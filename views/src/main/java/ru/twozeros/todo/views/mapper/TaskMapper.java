@@ -9,10 +9,19 @@ import java.util.Date;
 public class TaskMapper {
 
     public static Task toService(TaskDto task) {
-        return new Task(task.getId(),task.getName(), new Date(), task.getIsCompleted());
+        return Task.builder()
+                .id(task.getId())
+                .name(task.getName())
+                .isComplete(task.getIsCompleted())
+                .created(new Date())
+                .build();
     }
 
     public static Task toService(NewTaskDto task) {
-        return new Task(null, task.getName(), new Date(), task.getIsCompleted());
+        return Task.builder()
+                .name(task.getName())
+                .created(new Date())
+                .isComplete(task.getIsCompleted())
+                .build();
     }
 }

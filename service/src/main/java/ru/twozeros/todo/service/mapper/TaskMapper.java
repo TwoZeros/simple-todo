@@ -6,10 +6,20 @@ import ru.twozeros.todo.service.model.Task;
 public class TaskMapper {
 
     public static TaskEntity toRequest(Task task) {
-        return new TaskEntity(task.getId(), task.getName(), task.getCreated(), task.getIsComplete());
+        return TaskEntity.builder()
+                .id(task.getId())
+                .name(task.getName())
+                .isComplete(task.getIsComplete())
+                .created(task.getCreated())
+                .build();
     }
 
     public static Task toResponse(TaskEntity task) {
-        return new Task(task.getId(), task.getName(), task.getCreated(), task.getComplete());
+       return Task.builder()
+               .id(task.getId())
+               .created(task.getCreated())
+               .isComplete(task.getIsComplete())
+               .name(task.getName())
+               .build();
     }
 }
