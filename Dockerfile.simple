@@ -1,0 +1,4 @@
+FROM eclipse-temurin:17-jre-alpine AS app-run
+WORKDIR /opt/build
+COPY ./views/target/*.jar ./application.jar
+ENTRYPOINT ["java","-jar","./application.jar"]
