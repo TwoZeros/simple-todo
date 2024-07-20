@@ -1,0 +1,27 @@
+# На этот раз нам требуется образ, содержащий maven, при помощи
+# ключевого слова as мы указываем псевдоним для контейнера сборки,
+# чтобы при его помощи в дальнейшем обращаться к контейнеру
+FROM maven:3.9.4-eclipse-temurin-17 AS maven
+
+# Собирать проект будем в /build
+WORKDIR /build
+
+# Теперь необходимо скопировать необходимые для сборки проекта файлы в конейнер
+COPY ./repository ./repository
+COPY ./service ./service
+COPY ./views ./views
+COPY pom.xml pom.xml
+
+# И запустить сборку проекта. Загружаемые библиотеки желательно кэшировать между
+# сборками,для этого нужно добавить --mount=type=cache,target=/root/.m2 к RUN
+RUN --mount=type=cache,target=/root/.m2 mvn clean package
+
+
+FROM eclipse-temurin:17-jre-alpine AS app-run
+ENV RELEASE=17
+
+WORKDIR /opt/build
+COPY --from=maven /build/views/target/*.jar ./application.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "application.jar"]
+
