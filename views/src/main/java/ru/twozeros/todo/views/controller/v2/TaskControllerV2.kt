@@ -5,6 +5,7 @@ import ru.twozeros.todo.service.exception.TaskArgumentException
 import ru.twozeros.todo.service.model.Task
 import ru.twozeros.todo.service.services.TaskService
 import ru.twozeros.todo.views.mapper.TaskMapper
+import ru.twozeros.todo.views.mapper.v2.toService
 import ru.twozeros.todo.views.model.NewTaskDto
 import ru.twozeros.todo.views.model.TaskDto
 
@@ -19,7 +20,7 @@ open class TaskControllerV2(private val service: TaskService) {
 
     @PostMapping
     fun newTask(@RequestBody taskDto: NewTaskDto): Task {
-        val task = TaskMapper.toService(taskDto)
+        val task = taskDto.toService()
         return service.add(task)
     }
 

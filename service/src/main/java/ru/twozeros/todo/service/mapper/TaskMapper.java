@@ -9,7 +9,7 @@ public class TaskMapper {
         return TaskEntity.builder()
                 .id(task.getId())
                 .name(task.getName())
-                .isComplete(task.getIsComplete())
+                .isComplete(task.getComplete())
                 .created(task.getCreated())
                 .build();
     }

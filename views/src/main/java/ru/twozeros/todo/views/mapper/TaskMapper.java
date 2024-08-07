@@ -21,7 +21,7 @@ public class TaskMapper {
         return Task.builder()
                 .name(task.getName())
                 .created(new Date())
-                .isComplete(task.getIsCompleted())
+                .isComplete(task.getCompleted())
                 .build();
     }
 }
