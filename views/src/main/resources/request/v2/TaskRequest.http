@@ -1,0 +1,42 @@
+GET localhost:8080/api/v2/task/list
+
+### get by id
+GET localhost:8080/api/v2/task/505
+
+### create task
+POST localhost:8080/api/v2/task/
+Content-Type: application/json
+
+{
+  "id": 7,
+  "name": "do anything 2",
+  "isCompleted": true
+}
+
+### create task
+POST localhost:8080/api/v2/task/
+Content-Type: application/json
+
+{
+  "id": 7,
+  "name": "do anything 3",
+  "isCompleted": true
+}
+
+
+###UPDATE task
+PUT localhost:8080/api/v2/task/
+Content-Type: application/json
+
+{
+  "name": "do anything"
+}
+
+
+### DELETE REQUEST
+
+
+DELETE localhost:8080/api/v2/task/4
+
+
+###

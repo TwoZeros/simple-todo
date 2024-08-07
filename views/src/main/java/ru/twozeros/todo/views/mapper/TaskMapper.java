@@ -12,7 +12,7 @@ public class TaskMapper {
         return Task.builder()
                 .id(task.getId())
                 .name(task.getName())
-                .isComplete(task.getIsCompleted())
+                .isComplete(task.getCompleted())
                 .created(new Date())
                 .build();
     }
